@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 
         //Setting Navigation View Item Selected Listener to handle the item click of the navigation menu
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
 
-
+                DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
                 //Checking if the item is in checked state or not, if not make it in checked state
                 if (menuItem.isChecked()) menuItem.setChecked(false);
                 else menuItem.setChecked(true);
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Initializing Drawer Layout and ActionBarToggle
-        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
+
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,myToolbar,R.string.openDrawer, R.string.closeDrawer){
 
             @Override
